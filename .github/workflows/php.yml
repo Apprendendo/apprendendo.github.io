@@ -1,39 +1,32 @@
-name: PHP Composer
+name: App Workflow
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - master
   pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
+    branches:
+      - master
 
 jobs:
   build:
-
+    name: Tests
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@master
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
+      - name: Setting up PHP
+        uses: ./.github/actions/php
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      - name: Installing Composer
+        run: ./.github/scripts/run-composer.sh
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      - name: Running PHPStan
+        run: ./.github/scripts/run-phpstan.sh
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+      - name: PHP Insights
+        run: ./.github/scripts/run-phpinsights.sh
 
-    # - name: Run test suite
-    #   run: composer run-script test
+      - name: Running PHPUnit
+        run: ./.github/scripts/run-phpunit.sh
