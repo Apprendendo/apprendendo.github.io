@@ -4,19 +4,29 @@
     require __DIR__ . '/../vendor/autoload.php';
     
     $titPag = "Inicio";
-    include('header.php');
+    $lang = "pt-br";
+    $relStyle = "stylesheet";
+    $linkCss = "/assets/style.css";
+
 
     $content = "
+        <!DOCTYPE html>
+        <html lang=".$lang.">
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>".$titPag." - ".$nomePag."</title>
+            <link rel=".$relStyle." href=".$linkCss.">
+        </head>
         <body>
-            <div class='w2-container'>
-                <h1>Olá</h1>
-            </div>
+            <h1>Olá</h1>
+            <p>Este é um exemplo de página com PHP.</p>
+            <hr/>
+            <p>2025. Camila L. Oliveira. Todos os direitos reservados.</p>
         </body>";
 
     // Salvar o conteúdo em um arquivo HTML
     file_put_contents(__DIR__ . '/../public/index.html', $content);
 
     echo "Página compilada com sucesso!\n";
-    
-
 ?>
