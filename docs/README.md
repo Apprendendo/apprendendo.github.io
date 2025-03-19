@@ -1,4 +1,4 @@
-# Apprendendo PRISM - Aulas de PHP em Sistemas Web I com GitHupPages
+# Apprendendo PRISM - Aulas de PHP em Sistemas Web I com GitHub Pages
 
 [![GitHub license](https://img.shields.io/github/license/clcmo/aulas_SWI_2Info?style=for-the-badge)](https://github.com/clcmo/aulas_SWI_2Info)
 [![GitHub stars](https://img.shields.io/github/stars/clcmo/aulas_SWI_2Info?style=for-the-badge)](https://github.com/clcmo/aulas_SWI_2Info/stargazers)
