@@ -2,8 +2,20 @@
 <?php
     // Aviso: essa parte precisou ser chamada para montarmos a página no Github pages.
     require __DIR__ . '/../vendor/autoload.php';
-    require __DIR__ .'/assets/style.css';
+    
+    $titPag = "Inicio";
+    $lang = "pt-br";
+    $relStyle = "stylesheet";
+    $linkCss = "/assets/style.css";
 
+    $head = "<!DOCTYPE html>
+        <html lang=".$lang.">
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>".$titPag." - ".$nomePag."</title>
+            <link rel=".$relStyle." href=".$linkCss.">
+        </head>";
 
     $content = "
         <body>
@@ -14,7 +26,7 @@
         </body>";
 
     // Salvar o conteúdo em um arquivo HTML
-    file_put_contents(__DIR__ . '/../public/index.html', $content);
+    file_put_contents(__DIR__ . '/../public/index.html', $head);
 
     echo "Página compilada com sucesso!\n";
 ?>
