@@ -1,33 +1,5 @@
 <?php 
-    //variáveis globais
-    $nome = $email = $senha = $genero = $descricao = $website = "";
-    $campoErr = "";
-
-    if($_SERVER["REQUEST_METHOD"] = "POST"){
-        $nome = test_input_required($_POST["nome"]);
-        $email = test_input_required($_POST["email"]);
-        $senha = test_input_required($_POST["senha"]);
-        $genero = test_input_required($_POST["genero"]);
-        $descricao = test_input($_POST["descricao"]);
-        $website = test_input($_POST["website"]);
-    }
-
-    function test_input_required($data){
-        if(isset($data)){
-            $data = test_input($data);
-        } else {
-            $data = "";
-            $campoErr = "Este campo é de preenchimento obrigatório";
-        }
-        return $data;
-    }
-
-    function test_input( $data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
+    //Ajeitar os scripts para a próxima aula
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
