@@ -11,9 +11,9 @@
 
     $content = "
         <head>
-            <meta charset=".$utf.">
+            <meta charset='UTF-8'>
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <title>".$titPag." - ".$nomePag."</title>
+            <title>Início</title>
             <style>
                 @import url(https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i);
 
