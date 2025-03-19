@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches:
-       - main 
+      - main 
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       - name: Configurar PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1' # Usando a nova versão do PHP
+          php-version: '8.1'
 
       - name: Instalando dependências
         run: composer install --no-dev --optimize-autoloader
@@ -30,7 +30,7 @@ jobs:
       - name: Verificar conteúdo da pasta ./public
         run: ls -la ./public
 
-      - name: Carregando artifacts
+      - name: Carregando artefatos
         uses: actions/upload-pages-artifact@v3
         with:
           path: './public'
@@ -39,12 +39,19 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
+      contents: write
       pages: write
       id-token: write
     environment:
       name: github-pages
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Verificar artefatos carregados
+        uses: actions/download-artifact@v3
+        with:
+          path: ./public
+      - name: Conferir conteúdo dos artefatos
+        run: ls -la ./public
+      - name: Deploy para GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
         with:
