@@ -85,7 +85,7 @@
         </html>";
 
         // Salvar o conteúdo em um arquivo HTML
-        file_put_contents(__DIR__ . '/../public/index.html', $content);
+        file_put_contents(__DIR__ . '/../public/index.html', $conteudoIndex);
 
         echo "Página compilada com sucesso!\n";
 
