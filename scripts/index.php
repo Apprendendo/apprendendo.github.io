@@ -9,16 +9,13 @@
     $relStyle = "stylesheet";
     $linkCss = "/assets/style.css";
 
-    $head = "<!DOCTYPE html>
-        <html lang=".$lang.">
+    $content = "
         <head>
             <meta charset=".$utf.">
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
             <title>".$titPag." - ".$nomePag."</title>
             <link rel=".$relStyle." href=".$linkCss.">
-        </head>";
-
-    $content = $head."
+        </head>
         <body>
             <h1>Olá</h1>
             <p>Este é um exemplo de página com PHP.</p>
