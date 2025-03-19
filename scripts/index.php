@@ -74,12 +74,7 @@
         </head>
         <body>
             <div class='w2-container'>
-                <!--<h1>Olá". $nome."</h1>
-                <h2 class='w3-title'>Dados cadastrados</h2>
-                <p>E-mail cadastrado: ".$email."</p>
-                <p>Genero: ".$genero."</p>
-                <p>Website: ".$website."</p>
-                <p>Descrição: ".$descricao."</p>-->
+                <h1>Olá".$nome."</h1>
             </div>
         </body>
         </html>";
