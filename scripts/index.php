@@ -1,3 +1,4 @@
+
 <?php
     // Aviso: essa parte precisou ser chamada para montarmos a página no Github pages.
     require __DIR__ . '/../vendor/autoload.php';
@@ -64,29 +65,28 @@
         }
     }
 
-    $conteudoIndex = "<!DOCTYPE html>
-        <html lang='pt-br'>
+?>
+
+<!DOCTYPE html>
+    <html lang='pt-br'>
         <head>
             <meta charset='UTF-8'>
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
             <title>Inicio - Aulas SW I</title>
             <link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>
         </head>
+
+        <?php $conteudoIndex = "
         <body>
             <div class='w2-container'>
-                <!--<h1>Olá". $nome."</h1>
-                <h2 class='w3-title'>Dados cadastrados</h2>
-                <p>E-mail cadastrado: ".$email."</p>
-                <p>Genero: ".$genero."</p>
-                <p>Website: ".$website."</p>
-                <p>Descrição: ".$descricao."</p>-->
+                <h1>Olá". $email."</h1>
             </div>
-        </body>
-        </html>";
+        </body>";
 
         // Salvar o conteúdo em um arquivo HTML
         file_put_contents(__DIR__ . '/../public/index.html', $conteudoIndex);
 
         echo "Página compilada com sucesso!\n";
 
-?>
+        ?>
+    </html>
