@@ -4,6 +4,7 @@
     require __DIR__ . '/../vendor/autoload.php';
     
     $titPag = "Inicio";
+    $utf = "UTF-8";
     $lang = "pt-br";
     $relStyle = "stylesheet";
     $linkCss = "/assets/style.css";
@@ -11,13 +12,13 @@
     $head = "<!DOCTYPE html>
         <html lang=".$lang.">
         <head>
-            <meta charset='UTF-8'>
+            <meta charset=".$utf.">
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
             <title>".$titPag." - ".$nomePag."</title>
             <link rel=".$relStyle." href=".$linkCss.">
         </head>";
 
-    $content = "
+    $content = $head."
         <body>
             <h1>Olá</h1>
             <p>Este é um exemplo de página com PHP.</p>
@@ -26,7 +27,7 @@
         </body>";
 
     // Salvar o conteúdo em um arquivo HTML
-    file_put_contents(__DIR__ . '/../public/index.html', $head);
+    file_put_contents(__DIR__ . '/../public/index.html', $content);
 
     echo "Página compilada com sucesso!\n";
 ?>
