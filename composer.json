@@ -8,7 +8,7 @@
       }
   },
   "scripts": {
-      "build": "php public/index.php"
+      "build": "php scripts/index.php"
   },
   "require": {
       "php": ">=7.4"
