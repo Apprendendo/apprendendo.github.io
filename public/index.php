@@ -1,5 +1,5 @@
 <?php
-
+    /**
     //variáveis globais
     $nome = $email = $senha = $genero = $descricao = $website = "";
     $campoErr = "";
@@ -28,6 +28,38 @@
         $data = htmlspecialchars($data);
         return $data;
     }
+
+    */
+
+    //Declarando variáveis pós login
+    $emailTeste="joyce@gmail.com";
+    $senhaTeste = "123456";
+
+    $email = $senha ="";
+
+    if($_SERVER["REQUEST_METHOD"] = "POST"){
+        if($email = $emailTeste){
+            $email = verificaDados($_POST["email"]);
+            if($senha = $senhaTeste) {
+                $senha = verificaDados($_POST["senha"]);
+            } else {
+                $erro = "Senha inválida. Tente novamente";
+            }
+        } else {
+            $erro = "E-mail inválido. Tente novamente";
+        }
+    } else {
+        $erro = "Método selecionado precisa ser post";
+    }
+
+    function verificaDados($dado){
+        if(isset($dado)){
+            $dado = trim($dado);
+            $dado = stripslashes($dado);
+            $dado = htmlspecialchars($dado);
+            return $dado;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -39,12 +71,14 @@
 </head>
 <body>
     <div class="w2-container">
-        <h1>Olá <?=$nome;?></h1>
+        <!--<h1>Olá <?=$nome;?></h1>
         <h2 class="w3-title">Dados cadastrados</h2>
         <p>E-mail cadastrado: <?=$email;?></p>
         <p>Genero: <?=$genero;?></p>
         <p>Website: <?=$website;?></p>
-        <p>Descrição: <?=$descricao;?></p>
+        <p>Descrição: <?=$descricao;?></p>-->
+
+        
     </div>
 </body>
 </html>
