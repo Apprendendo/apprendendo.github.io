@@ -13,21 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checar código
         uses: actions/checkout@v4
 
-      - name: Setup PHP
+      - name: Configurar PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1' # Ou a versão desejada
+          php-version: '8.1' # Usando a nova versão do PHP
 
-      - name: Install dependencies
+      - name: Instalando dependencias
         run: composer install --no-dev --optimize-autoloader
 
-      - name: Build page
+      - name: Build páginas
         run: composer run-script build
 
-      - name: Upload artifacts
+      - name: Carregando artifacts
         uses: actions/upload-pages-artifact@v3
         with:
           path: './public'
