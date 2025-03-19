@@ -1,28 +1,16 @@
 {
-    "name": "kennedytedesco/github-actions-php",
-    "description": "Exemplo do uso de Github Actions para um projeto PHP",
-    "license": "MIT",
-    "require-dev": {
-      "nunomaduro/phpinsights": "^1.9",
-      "phpstan/phpstan": "^0.11",
-      "phpunit/phpunit": "^8.0",
-      "friendsofphp/php-cs-fixer": "^2.1"
-    },
-    "autoload": {
+  "name": "clcmo/aulas_SWI_2info",
+  "description": "Projeto PHP simples gerado para GitHub Actions.",
+  "license": "MIT",
+  "autoload": {
       "psr-4": {
-        "App\\": "src"
+          "App\\": "src/"
       }
-    },
-    "autoload-dev": {
-      "psr-4": {
-        "Tests\\": "tests/"
-      }
-    },
-    "config": {
-      "optimize-autoloader": true,
-      "preferred-install": "dist",
-      "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  },
+  "scripts": {
+      "build": "php scripts/build.php"
+  },
+  "require": {
+      "php": ">=7.4"
   }
+}
