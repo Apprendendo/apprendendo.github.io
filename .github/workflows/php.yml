@@ -46,7 +46,7 @@ jobs:
       name: github-pages
     steps:
       - name: Verificar artefatos carregados
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: ./public
       - name: Conferir conteúdo dos artefatos
