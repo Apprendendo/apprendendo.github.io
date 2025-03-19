@@ -1,6 +1,6 @@
 <?php 
-    //Ajeitar os scripts para a próxima aula
- ?>
+    // Ajeitar os scripts para a próxima aula
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
