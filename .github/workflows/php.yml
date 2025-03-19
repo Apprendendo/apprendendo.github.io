@@ -3,7 +3,7 @@ name: Configurando a página PHP
 on:
   push:
     branches:
-      - main
+      - ghp
 
 jobs:
   build:
