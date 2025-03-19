@@ -21,11 +21,14 @@ jobs:
         with:
           php-version: '8.1' # Usando a nova versão do PHP
 
-      - name: Instalando dependencias
+      - name: Instalando dependências
         run: composer install --no-dev --optimize-autoloader
 
       - name: Build páginas
         run: composer run-script build
+
+      - name: Verificar conteúdo da pasta ./public
+        run: ls -la ./public
 
       - name: Carregando artifacts
         uses: actions/upload-pages-artifact@v3
