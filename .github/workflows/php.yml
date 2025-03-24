@@ -39,8 +39,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      pages: write
+      contents: read
       id-token: write
+      pages: write
     environment:
       name: github-pages
     steps:
@@ -53,5 +54,7 @@ jobs:
       - name: Deploy para GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          debug: true
+        env: 
+          DEBUG_HTTP: true
+        #with:
+          #debug: true
