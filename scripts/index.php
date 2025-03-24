@@ -22,14 +22,11 @@
                 body {
                     background-color: #010;
                     font-family: 'Muli light', sans-serif;
-                    background-image: url(https://cdn.pixabay.com/photo/2025/02/03/13/53/coffee-9379521_1280.png);
-                    background-repeat: no-repeat;
-                    background-attachment: fixed;
                 }
 
                 .fixed-bg {
                   /* The background image */
-                  background-image: url("img_tree.gif");
+                  background-image: url(https://cdn.pixabay.com/photo/2025/02/03/13/53/coffee-9379521_1280.png);
                 
                   /* Set a specified height, or the minimum height for the background image */
                   min-height: 500px;
