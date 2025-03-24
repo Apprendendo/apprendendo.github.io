@@ -20,28 +20,24 @@
 
                 *,
                 body {
-                    background-color: #010;
                     font-family: 'Muli light', sans-serif;
-                }
-
-                .fixed-bg {
-                  /* The background image */
-                  background-image: url(https://cdn.pixabay.com/photo/2025/02/03/13/53/coffee-9379521_1280.png);
-                
-                  /* Set a specified height, or the minimum height for the background image */
-                  min-height: 500px;
-                
-                  /* Set background image to fixed (don't scroll along with the page) */
-                  background-attachment: fixed;
-                
-                  /* Center the background image */
-                  background-position: center;
-                
-                  /* Set the background image to no repeat */
-                  background-repeat: no-repeat;
-                
-                  /* Scale the background image to be as large as possible */
-                  background-size: cover;
+                    /* The background image */
+                      background-image: url(https://cdn.pixabay.com/photo/2025/02/03/13/53/coffee-9379521_1280.png);
+                    
+                      /* Set a specified height, or the minimum height for the background image */
+                      min-height: 500px;
+                    
+                      /* Set background image to fixed (don't scroll along with the page) */
+                      background-attachment: fixed;
+                    
+                      /* Center the background image */
+                      background-position: center;
+                    
+                      /* Set the background image to no repeat */
+                      background-repeat: no-repeat;
+                    
+                      /* Scale the background image to be as large as possible */
+                      background-size: cover;
                 }
 
                 h1,
@@ -63,18 +59,19 @@
                     width: 40%;
                     position: center;
                 }
-                footer{
+                
+                .footer {
                     margin-top: 50px;
                     margin-bottom: 50px;
                 }
             </style>
         </head>
         <body>
-            <div class='fixed-bg'>
+            <div class='content'>
                 <h1>Olá</h1>
                 <p>Este é um exemplo de página com PHP.</p>
-                <hr/>
-                <footer>
+                <div class='footer'>
+                    <hr/>
                     <p>© 2025. Camila L. Oliveira. Todos os direitos reservados.</p>
                 </footer>
             </div>
