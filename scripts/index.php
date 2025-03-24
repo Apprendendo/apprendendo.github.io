@@ -27,6 +27,26 @@
                     background-attachment: fixed;
                 }
 
+                .fixed-bg {
+                  /* The background image */
+                  background-image: url("img_tree.gif");
+                
+                  /* Set a specified height, or the minimum height for the background image */
+                  min-height: 500px;
+                
+                  /* Set background image to fixed (don't scroll along with the page) */
+                  background-attachment: fixed;
+                
+                  /* Center the background image */
+                  background-position: center;
+                
+                  /* Set the background image to no repeat */
+                  background-repeat: no-repeat;
+                
+                  /* Scale the background image to be as large as possible */
+                  background-size: cover;
+                }
+
                 h1,
                 p {
                     text-align: center;
@@ -46,13 +66,21 @@
                     width: 40%;
                     position: center;
                 }
+                footer{
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+                }
             </style>
         </head>
         <body>
-            <h1>Olá</h1>
-            <p>Este é um exemplo de página com PHP.</p>
-            <hr/>
-            <p>2025. Camila L. Oliveira. Todos os direitos reservados.</p>
+            <div class="fixed-bg">
+                <h1>Olá</h1>
+                <p>Este é um exemplo de página com PHP.</p>
+                <hr/>
+                <footer>
+                    <p>© 2025. Camila L. Oliveira. Todos os direitos reservados.</p>
+                </footer>
+            </div>
         </body>";
 
     // Salvar o conteúdo em um arquivo HTML
