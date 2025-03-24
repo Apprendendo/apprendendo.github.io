@@ -25,7 +25,7 @@
                       background-image: url(https://cdn.pixabay.com/photo/2025/02/03/13/53/coffee-9379521_1280.png);
                     
                       /* Set a specified height, or the minimum height for the background image */
-                      min-height: 500px;
+                      //min-height: 500px;
                     
                       /* Set background image to fixed (don't scroll along with the page) */
                       background-attachment: fixed;
@@ -61,8 +61,8 @@
                 }
                 
                 .footer {
-                    margin-top: 10px;
-                    margin-bottom: 10px;
+                    margin-top: 40px;
+                    margin-bottom: 40px;
                 }
             </style>
         </head>
