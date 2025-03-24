@@ -47,11 +47,11 @@
                 }
 
                 h1 {
-                    padding-top: 20%
+                    padding-top: 10%
                 }
 
                 hr {
-                    border: shade #E3E3E3;
+                    border: solid #E3E3E3;
                     border-width: 1px 0 0;
                     clear: both;
                     /*margin: 11px 0 30px; */
@@ -61,8 +61,8 @@
                 }
                 
                 .footer {
-                    margin-top: 50px;
-                    margin-bottom: 50px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
                 }
             </style>
         </head>
@@ -70,10 +70,10 @@
             <div class='content'>
                 <h1>Olá</h1>
                 <p>Este é um exemplo de página com PHP.</p>
-                <div class='footer'>
-                    <hr/>
-                    <p>© 2025. Camila L. Oliveira. Todos os direitos reservados.</p>
-                </footer>
+            </div>
+            <div class='footer'>
+                <hr/>
+                <p>© 2025. Camila L. Oliveira. Todos os direitos reservados.</p>
             </div>
         </body>";
 
