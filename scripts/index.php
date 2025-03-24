@@ -22,7 +22,9 @@
                 body {
                     background-color: #010;
                     font-family: 'Muli light', sans-serif;
-                    background-image: url(https://cdn.pixabay.com/photo/2025/02/03/13/53/coffee-9379521_1280.png)
+                    background-image: url(https://cdn.pixabay.com/photo/2025/02/03/13/53/coffee-9379521_1280.png);
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
                 }
 
                 h1,
