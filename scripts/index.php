@@ -70,7 +70,7 @@
             </style>
         </head>
         <body>
-            <div class="fixed-bg">
+            <div class='fixed-bg'>
                 <h1>Olá</h1>
                 <p>Este é um exemplo de página com PHP.</p>
                 <hr/>
