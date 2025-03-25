@@ -1,41 +1,54 @@
 <?php
-    /**
-    //variáveis globais
-    $nome = $email = $senha = $genero = $descricao = $website = "";
-    $campoErr = "";
+    //Ajustei a pagina com a classe de cadastro pra organizar o codigo
+
+    class Cadastro {
+        //Variaveis do cadastro
+        public $nome = $email = $senha = $genero = $descricao = $website = "";
+        public $nomeErr = "";
+        public $campoErr = false;
+
+        public function verificaPreCadastro($data) {
+            if(isset($data)){
+                $data = $this->verificaDados($data);
+            } else {
+                $data = "";
+                $this->errou(true);
+            }
+            return $data;
+        }
+
+        public function errou($data) {
+            if($data == true){
+                $campoErr = "Este campo é de preenchimento obrigatório";
+            } 
+            return $campoErr;
+        }
+
+        public function verificaDados($dado){
+            if(isset($dado)){
+                $dado = trim($dado);
+                $dado = stripslashes($dado);
+                $dado = htmlspecialchars($dado);
+                return $dado;
+            }
+        }
+    }
 
     if($_SERVER["REQUEST_METHOD"] = "POST"){
-        $nome = test_input_required($_POST["nome"]);
-        $email = test_input_required($_POST["email"]);
-        $senha = test_input_required($_POST["senha"]);
-        $genero = test_input_required($_POST["genero"]);
-        $descricao = test_input($_POST["descricao"]);
-        $website = test_input($_POST["website"]);
-    }
-    function test_input_required($data){
-        if(isset($data)){
-            $data = test_input($data);
-        } else {
-            $data = "";
-            $campoErr = "Este campo é de preenchimento obrigatório";
-        }
-        return $data;
+        $nome = new Cadastro()->verificaPreCadastro($_POST["nome"]);
+        $email = new Cadastro()->verificaPreCadastro($_POST["email"]);
+        $senha = new Cadastro()->verificaPreCadastro($_POST["senha"]);
+        $genero = new Cadastro()->verificaPreCadastro($_POST["genero"]);
+        $descricao = new Cadastro()->verificaDados($_POST["descricao"]);
+        $website = new Cadastro()->verificaDados($_POST["website"]);
     }
 
-    function test_input( $data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    */
+    //Proxima aula - Configurar classe Login e como tratar
 
     //Declarando variáveis pós login
     $emailTeste="joyce@gmail.com";
     $senhaTeste = "123456";
 
-    $email = $senha ="";
 
     if($_SERVER["REQUEST_METHOD"] = "POST"){
         if($email = $emailTeste){
@@ -52,14 +65,7 @@
         $erro = "Método selecionado precisa ser post";
     }
 
-    function verificaDados($dado){
-        if(isset($dado)){
-            $dado = trim($dado);
-            $dado = stripslashes($dado);
-            $dado = htmlspecialchars($dado);
-            return $dado;
-        }
-    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
