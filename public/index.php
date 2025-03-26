@@ -35,7 +35,7 @@
     $emailTeste="joyce@gmail.com";
     $senhaTeste = "123456";
 
-    $email = $senha ="";
+    $email = $senha = "";
 
     if($_SERVER["REQUEST_METHOD"] = "POST"){
         if($email = $emailTeste){
