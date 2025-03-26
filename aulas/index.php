@@ -36,19 +36,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["form_tipo"]) && $_POST
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <div class="w3-container">
-        <!-- Mensagens -->
-        <?php if (!empty($mensagemCadastro)) echo "<p class='w3-green'>$mensagemCadastro</p>"; ?>
-        <?php if (!empty($mensagemLogin)) echo "<p class='w3-blue'>$mensagemLogin</p>"; ?>
 
-        <!-- Exibição de dados do Cadastro -->
-        <?php if (!empty($nome)): ?>
-            <h2>Bem-vindo, <?= htmlspecialchars($nome); ?></h2>
-            <p>E-mail: <?= htmlspecialchars($email); ?></p>
-            <p>Gênero: <?= htmlspecialchars($genero); ?></p>
-            <p>Descrição: <?= htmlspecialchars($descricao); ?></p>
-            <p>Website: <?= htmlspecialchars($website); ?></p>
+    <!-- Cabeçalho -->
+    <div class="w3-container header w3-center">
+        <h1>Bem-vindo ao Sistema</h1>
+        <p>Gerencie suas informações de cadastro e login</p>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="w3-container content">
+        <!-- Caixa de dados cadastrados -->
+        <div class="w3-card w3-padding w3-margin w3-white">
+            <h2 class="w3-text-blue">Dados Cadastrados</h2>
+            <?php if (!empty($nome)): ?>
+                <p><b>Nome:</b> <?= htmlspecialchars($nome); ?></p>
+                <p><b>E-mail:</b> <?= htmlspecialchars($email); ?></p>
+                <p><b>Gênero:</b> <?= htmlspecialchars($genero); ?></p>
+                <p><b>Descrição:</b> <?= htmlspecialchars($descricao); ?></p>
+                <p><b>Website:</b> <a href="<?= htmlspecialchars($website); ?>" target="_blank"><?= htmlspecialchars($website); ?></a></p>
+            <?php else: ?>
+                <p class="w3-text-grey">Nenhum dado cadastrado ainda.</p>
+            <?php endif; ?>
+        </div>
+
+        <!-- Exibir mensagens de feedback -->
+        <?php if (!empty($mensagemCadastro)): ?>
+            <div class="w3-panel w3-green w3-padding">
+                <p><?= $mensagemCadastro; ?></p>
+            </div>
         <?php endif; ?>
+
+        <?php if (!empty($mensagemLogin)): ?>
+            <div class="w3-panel w3-blue w3-padding">
+                <p><?= $mensagemLogin; ?></p>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <!-- Rodapé -->
+    <div class="w3-container w3-center w3-light-grey w3-padding">
+        <p>Desenvolvido para Aula SW I - Exemplo de Integração com PHP e W3.CSS</p>
     </div>
 </body>
 </html>
