@@ -1,7 +1,12 @@
 <?php
 // Classe para gerenciar o cadastro
 class Cadastro {
-    public $nome = $email = $senha = $genero = $descricao = $website = "";
+    public $nome = "";
+    public $email = "";
+    public $senha = "";
+    public $genero = "";
+    public $descricao = "";
+    public $website = "";
 
     // Função para verificar e limpar os dados do cadastro
     public function verificaPreCadastro($data) {

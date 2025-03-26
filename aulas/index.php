@@ -1,7 +1,7 @@
 <?php
-// Incluindo as classes necessárias
-require_once("cadastro.php");
-require_once("login.php");
+if (basename($_SERVER['PHP_SELF']) === 'index.php') {
+    include 'classes.php';
+}
 
 // Instanciando as classes
 $cadastro = new Cadastro();
