@@ -1,87 +1,84 @@
+
 <?php
     // Aviso: essa parte precisou ser chamada para montarmos a página no Github pages.
     require __DIR__ . '/../vendor/autoload.php';
     
-    /**
-    //variáveis globais
-    $nome = $email = $senha = $genero = $descricao = $website = "";
-    $campoErr = "";
+    $titPag = "Inicio";
+    $utf = "UTF-8";
+    $lang = "pt-br";
+    $relStyle = "stylesheet";
+    $linkCss = "/assets/style.css";
 
-    if($_SERVER["REQUEST_METHOD"] = "POST"){
-        $nome = test_input_required($_POST["nome"]);
-        $email = test_input_required($_POST["email"]);
-        $senha = test_input_required($_POST["senha"]);
-        $genero = test_input_required($_POST["genero"]);
-        $descricao = test_input($_POST["descricao"]);
-        $website = test_input($_POST["website"]);
-    }
-    function test_input_required($data){
-        if(isset($data)){
-            $data = test_input($data);
-        } else {
-            $data = "";
-            $campoErr = "Este campo é de preenchimento obrigatório";
-        }
-        return $data;
-    }
-
-    function test_input( $data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    */
-
-    //Declarando variáveis pós login
-    $emailTeste="joyce@gmail.com";
-    $senhaTeste = "123456";
-
-    $email = $senha ="";
-
-    if($_SERVER["REQUEST_METHOD"] = "POST"){
-        if($email = $emailTeste){
-            $email = verificaDados($_POST["email"]);
-            if($senha = $senhaTeste) {
-                $senha = verificaDados($_POST["senha"]);
-            } else {
-                $erro = "Senha inválida. Tente novamente";
-            }
-        } else {
-            $erro = "E-mail inválido. Tente novamente";
-        }
-    } else {
-        $erro = "Método selecionado precisa ser post";
-    }
-
-    function verificaDados($dado){
-        if(isset($dado)){
-            $dado = trim($dado);
-            $dado = stripslashes($dado);
-            $dado = htmlspecialchars($dado);
-            return $dado;
-        }
-    }
-
-    $conteudoIndex = "<!DOCTYPE html>
-        <html lang='pt-br'>
+    $content = "
         <head>
             <meta charset='UTF-8'>
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <title>Inicio - Aulas SW I</title>
-            <link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>
+            <title>Início</title>
+            <link rel='icon' type='image/x-icon' href='../public/assets/images/favicon.ico'>
+            <style>
+                @import url(https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i);
+
+                *,
+                body {
+                    font-family: 'Muli light', sans-serif;
+                    /* The background image */
+                      background-image: url(https://cdn.pixabay.com/photo/2025/02/03/13/53/coffee-9379521_1280.png);
+                    
+                      /* Set a specified height, or the minimum height for the background image */
+                      //min-height: 500px;
+                    
+                      /* Set background image to fixed (don't scroll along with the page) */
+                      background-attachment: fixed;
+                    
+                      /* Center the background image */
+                      background-position: center;
+                    
+                      /* Set the background image to no repeat */
+                      background-repeat: no-repeat;
+                    
+                      /* Scale the background image to be as large as possible */
+                      background-size: cover;
+                }
+
+                h1,
+                p {
+                    text-align: center;
+                    color: #f1f1f1;
+                }
+
+                h1 {
+                    padding-top: 10%
+                }
+
+                hr {
+                    border: solid #E3E3E3;
+                    border-width: 1px 0 0;
+                    clear: both;
+                    /*margin: 11px 0 30px; */
+                    height: 0;
+                    width: 40%;
+                    position: center;
+                }
+                
+                .footer {
+                    margin-top: 40px;
+                    margin-bottom: 40px;
+                }
+            </style>
         </head>
         <body>
-            <div class='w2-container'>
-                <h1>Olá".$nome."</h1>
+            <div class='content'>
+                <h1>Olá</h1>
+                <p>Este é um exemplo de página com PHP.</p>
             </div>
-        </body>
-        </html>";
+            <div class='footer'>
+                <hr/>
+                <p>© 2025. Camila L. Oliveira. Todos os direitos reservados.</p>
+            </div>
+        </body>";
 
-        // Salvar o conteúdo em um arquivo HTML
-        file_put_contents(__DIR__ . '/../public/index.html', $conteudoIndex);
+    // Salvar o conteúdo em um arquivo HTML
+    file_put_contents(__DIR__ . '/../public/index.html', $content);
 
-        echo "Página compilada com sucesso!\n";
-
+    echo "Página compilada com sucesso!\n";
 ?>
