@@ -11,7 +11,8 @@ $mensagemCadastro = "";
 $mensagemLogin = "";
 
 // Verificando se o formulário de Cadastro foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["form_tipo"]) && $_POST["form_tipo"] == "cadastro") {
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == "POST" 
+    && isset($_POST["form_tipo"]) && $_POST["form_tipo"] == "cadastro") {
     $nome = $cadastro->verificaPreCadastro($_POST["nome"]);
     $email = $cadastro->verificaPreCadastro($_POST["email"]);
     $senha = $cadastro->verificaPreCadastro($_POST["senha"]);
