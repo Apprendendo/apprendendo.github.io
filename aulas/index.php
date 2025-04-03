@@ -24,7 +24,8 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == "POST"
 }
 
 // Verificando se o formulário de Login foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["form_tipo"]) && $_POST["form_tipo"] == "login") {
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == "POST" 
+    && isset($_POST["form_tipo"]) && $_POST["form_tipo"] == "login") {
     $mensagemLogin = $login->verificaDados($_POST["email"], $_POST["senha"]);
 }
 ?>
