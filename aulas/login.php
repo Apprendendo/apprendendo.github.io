@@ -47,8 +47,10 @@ class Login {
             <p></p>
 
             <!-- Botões -->
-            <button type="submit" class="w3-button w3-blue w3-round w3-large">Entrar</button>
-            <button type="reset" class="w3-button w3-red w3-round w3-large">Cancelar</button>
+            <div class="buttons">
+                <button type="submit" class="w3-button w3-blue w3-round w3-large">Entrar</button>
+                <button type="reset" class="w3-button w3-red w3-round w3-large">Cancelar</button>
+            </div>
         </form>
     </div>
 
